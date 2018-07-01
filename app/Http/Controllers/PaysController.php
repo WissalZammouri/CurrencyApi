@@ -23,11 +23,13 @@ class PaysController extends Controller
         $array=json_decode($json);
         foreach ($array as $obj) 
         {
-            if (  $obj->name == $name) {
+            if ( strtoupper($obj->name)  == strtoupper($name) ) {
             return response()->json(['name' => $obj->name, 'currency' => $obj->currency]);
 
             } 
+            
         }
+         return abort(404);
     }
 
 }
