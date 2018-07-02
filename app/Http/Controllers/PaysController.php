@@ -10,7 +10,7 @@ class PaysController extends Controller
 {
     public function index()
     {
-        $json = file_get_contents("pays.json");
+        $json = file_get_contents( __DIR__."/pays.json") ;
         $pays=json_decode($json);
         return View('pays',['pays' => $pays]);
 
@@ -19,7 +19,7 @@ class PaysController extends Controller
     public function show($name)
     {
 
-        $json = file_get_contents("pays.json");
+        $json = file_get_contents(__DIR__."/pays.json");
         $array=json_decode($json);
         foreach ($array as $obj) 
         {
