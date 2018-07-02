@@ -8,6 +8,13 @@ use App\Http\Requests;
 
 class PaysController extends Controller
 {
+    public function documentation(){
+
+        return View('index');
+
+
+    }
+    
     public function index()
     {
         $json = file_get_contents( __DIR__."/pays.json") ;

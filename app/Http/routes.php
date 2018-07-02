@@ -11,6 +11,8 @@
 |
 */
 
-Route::get('/','PaysController@index');
+Route::get('/','PaysController@documentation');
+
+Route::get('/pays','PaysController@index');
 
 Route::get('/pays/{name}','PaysController@show');
