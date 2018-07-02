@@ -9,7 +9,7 @@ services:
         environment:
             docker: "true"
         ports:
-            - 8000:7000
+            - 8001:7000
         volumes:
             - .:/var/www
             - /sbin/ip:/sbin/ip
