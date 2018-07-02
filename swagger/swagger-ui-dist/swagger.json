@@ -1,0 +1,72 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Swagger Pays"
+  },
+  "host": "localhost:8000",
+  "basePath": "/",
+  "tags": [
+    {
+      "name": "pays",
+      "description": "Everything about the currency of a coutry"
+    }
+  ],
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/pays/{name}": {
+      "get": {
+        "tags": [
+          "pays"
+        ],
+        "summary": "Get currency by name",
+        "description": "Returns country's name with his currency",
+        "operationId": "getCurrencyByName",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "name",
+            "in": "path",
+            "description": "The name of country to get his currency",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/Pays"
+            }
+          },
+          "404": {
+            "description": "Error! not found"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Pays": {
+      "type": "object",
+      "required": [
+        "name",
+        "currency"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "example": "Tunisia"
+        },
+        "currency": {
+          "type": "string",
+          "example": "TND"
+        }
+      }
+    }
+  }
+}
